@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions targetNamespace="http://siebel.com/Fins" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.w3.org/2001/XMLSchema" xmlns:WL5G3N2="http://www.siebel.com/xml/OCS%20Listado%20de%20Reportes%20IO" xmlns:WL5G3N3="http://siebel.com/Fins" xmlns:WL5G3N4="http://schemas.xmlsoap.org/wsdl/soap/">
+  <WL5G3N0:types>
+    <WL5G3N1:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/OCS%20Listado%20de%20Reportes%20IO" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://siebel.com/Fins" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsdLocal0="http://www.siebel.com/xml/OCS%20Listado%20de%20Reportes%20IO">
+      <WL5G3N1:annotation>
+        <WL5G3N1:documentation>Copyright (C) 2001-2004 Siebel Systems, Inc. All rights reserved. Siebel XSD Generation</WL5G3N1:documentation>
+      </WL5G3N1:annotation>
+      <WL5G3N1:element name="ListOfOcsListadoDeReportesIo" type="xsdLocal0:ListOfOcsListadoDeReportesIo"/>
+      <WL5G3N1:complexType name="ListOfOcsListadoDeReportesIoTopElmt">
+        <WL5G3N1:sequence>
+          <WL5G3N1:element maxOccurs="1" minOccurs="1" name="ListOfOcsListadoDeReportesIo" type="xsdLocal0:ListOfOcsListadoDeReportesIo"/>
+        </WL5G3N1:sequence>
+      </WL5G3N1:complexType>
+      <WL5G3N1:complexType name="ListOfOcsListadoDeReportesIo">
+        <WL5G3N1:sequence>
+          <WL5G3N1:element maxOccurs="unbounded" minOccurs="0" name="Quote" type="xsdLocal0:Quote"/>
+        </WL5G3N1:sequence>
+      </WL5G3N1:complexType>
+      <WL5G3N1:complexType name="Quote">
+        <WL5G3N1:sequence>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:string"/>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="OCSTemplateFirmaDigitalId" type="xsd:string"/>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="ListOfQuoteItem" type="xsdLocal0:ListOfQuoteItem"/>
+        </WL5G3N1:sequence>
+      </WL5G3N1:complexType>
+      <WL5G3N1:complexType name="ListOfQuoteItem">
+        <WL5G3N1:sequence>
+          <WL5G3N1:element maxOccurs="unbounded" minOccurs="0" name="QuoteItem" type="xsdLocal0:QuoteItem"/>
+        </WL5G3N1:sequence>
+      </WL5G3N1:complexType>
+      <WL5G3N1:complexType name="QuoteItem">
+        <WL5G3N1:sequence>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:string"/>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="QuoteId" type="xsd:string"/>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="ListOfAction" type="xsdLocal0:ListOfAction"/>
+        </WL5G3N1:sequence>
+      </WL5G3N1:complexType>
+      <WL5G3N1:complexType name="ListOfAction">
+        <WL5G3N1:sequence>
+          <WL5G3N1:element maxOccurs="unbounded" minOccurs="0" name="Action" type="xsdLocal0:Action"/>
+        </WL5G3N1:sequence>
+      </WL5G3N1:complexType>
+      <WL5G3N1:complexType name="Action">
+        <WL5G3N1:sequence>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:string"/>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="QuoteItemId" type="xsd:string"/>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="Description" type="xsd:string"/>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="OCSIdDocumento" type="xsd:string"/>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="OCSFirmaDigitalFlag" type="xsd:string"/>
+          <WL5G3N1:element maxOccurs="1" minOccurs="0" name="ParentActivityId" type="xsd:string"/>
+        </WL5G3N1:sequence>
+      </WL5G3N1:complexType>
+    </WL5G3N1:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="OCS_spcListado_spcde_spcDocumentos_spcWF_Input">
+    <WL5G3N0:part name="QuoteId" type="WL5G3N1:string"/>
+    <WL5G3N0:part name="OCSTemplateFirmaDigId" type="WL5G3N1:string"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="OCS_spcListado_spcde_spcDocumentos_spcWF_Output">
+    <WL5G3N0:part name="Error_spcCode" type="WL5G3N1:string"/>
+    <WL5G3N0:part name="Error_spcMessage" type="WL5G3N1:string"/>
+    <WL5G3N0:part name="OCSTemplateFirmaDigId" type="WL5G3N1:string"/>
+    <WL5G3N0:part name="Response_spcIO" type="WL5G3N2:ListOfOcsListadoDeReportesIoTopElmt"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="OCSListadoDocumentosWS">
+    <WL5G3N0:operation name="OCS_spcListado_spcde_spcDocumentos_spcWF">
+      <WL5G3N0:input message="WL5G3N3:OCS_spcListado_spcde_spcDocumentos_spcWF_Input"/>
+      <WL5G3N0:output message="WL5G3N3:OCS_spcListado_spcde_spcDocumentos_spcWF_Output"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="OCSListadoDocumentosWS" type="WL5G3N3:OCSListadoDocumentosWS">
+    <WL5G3N4:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="OCS_spcListado_spcde_spcDocumentos_spcWF">
+      <WL5G3N4:operation soapAction="rpc/http://siebel.com/Fins:OCS_spcListado_spcde_spcDocumentos_spcWF"/>
+      <WL5G3N0:input>
+        <WL5G3N4:body namespace="http://siebel.com/Fins" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body namespace="http://siebel.com/Fins" use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="OcSListadoDeDocumentos">
+    <WL5G3N0:port binding="WL5G3N3:OCSListadoDocumentosWS" name="OCSListadoDocumentosWS">
+      <WL5G3N4:address location="http://lasiewebsit.ccaf.andes:8080/enterprise/EntListadoDocumentosService"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>
